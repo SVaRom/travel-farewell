@@ -3,7 +3,6 @@ const EVENTO = {
   fechaTexto: "Sábado 10 de octubre",
   hora: "5:00 pm",
   lugar: "Ferretería Armando",
-  direccion: "En la cochera",
   mapa: "https://maps.app.goo.gl/EZdtNwoFZHT1ixi4A",
   destino: "Tuscaloosa, Alabama",
 };
@@ -14,8 +13,8 @@ const FOTO_FAMILIA = {
   flechas: [
     { nombre: "Julio", x: 24, y: 21, lx: 9, ly: 7, r: 5 },
     { nombre: "Diana", x: 46, y: 22, lx: 64, ly: 8, r: 5 },
-    { nombre: "Liam", x: 28, y: 33, lx: 8, ly: 44, r: 6 },
-    { nombre: "Luca", x: 49, y: 30, lx: 72, ly: 38, r: 6 },
+    { nombre: "Liam", x: 28, y: 33, lx: 9, ly: 50, r: 8.5 },
+    { nombre: "Luca", x: 49, y: 30, lx: 80, ly: 44, r: 8.5 },
   ],
 };
 

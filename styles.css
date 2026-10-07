@@ -340,6 +340,7 @@ body.editar .polaroid img { cursor: crosshair; }
 
 @media (max-width: 560px) {
   .avion > g { transform: scale(1.3); }
+  .galeria > .polaroid { flex-basis: 100%; }
   .boleto { flex-direction: column; }
   .boleto-talon { width: 100%; flex-direction: row; padding: 16px 24px; border-left: none; border-top: 3px dashed var(--crema); }
   .boleto-talon b { writing-mode: horizontal-tb; }

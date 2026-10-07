@@ -102,10 +102,24 @@
       const et = etiquetas[i];
       const ew = et.offsetWidth, eh = et.offsetHeight;
       const limitar = (v, min, max) => Math.max(min, Math.min(max, v));
-      const L = {
-        x: limitar((f.lx / 100) * w, ew / 2 + 4, w - ew / 2 - 4),
-        y: limitar((f.ly / 100) * h, eh / 2 + 4, h - eh / 2 - 4),
-      };
+      const salidaDe = (vx, vy) => Math.min(
+        Math.abs(vx) > 1e-3 ? ew / 2 / Math.abs(vx) : Infinity,
+        Math.abs(vy) > 1e-3 ? eh / 2 / Math.abs(vy) : Infinity
+      ) + 5;
+      let hueco = ((f.r ?? 8) / 100) * w + 4;
+      const largoMin = Math.max(34, w * 0.12);
+
+      const L = { x: (f.lx / 100) * w, y: (f.ly / 100) * h };
+      let vx = L.x - P.x, vy = L.y - P.y;
+      const d0 = Math.hypot(vx, vy) || 1;
+      vx /= d0; vy /= d0;
+      const necesario = salidaDe(vx, vy) + hueco + largoMin;
+      if (d0 < necesario) {
+        L.x = P.x + vx * necesario;
+        L.y = P.y + vy * necesario;
+      }
+      L.x = limitar(L.x, ew / 2 + 4, w - ew / 2 - 4);
+      L.y = limitar(L.y, eh / 2 + 4, h - eh / 2 - 4);
       et.style.left = `${L.x}px`;
       et.style.top = `${L.y}px`;
 
@@ -113,14 +127,9 @@
       const dist = Math.hypot(dx, dy) || 1;
       const ux = dx / dist, uy = dy / dist;
 
-      const salida = Math.min(
-        Math.abs(ux) > 1e-3 ? ew / 2 / Math.abs(ux) : Infinity,
-        Math.abs(uy) > 1e-3 ? eh / 2 / Math.abs(uy) : Infinity
-      ) + 5;
-      let hueco = ((f.r ?? 8) / 100) * w + 4;
-      const minimo = 18;
-      if (dist - salida - hueco < minimo) hueco = Math.max(2, dist - salida - minimo);
-      if (dist - salida - hueco < 10) return;
+      const salida = salidaDe(ux, uy);
+      if (dist - salida - hueco < largoMin) hueco = Math.max(2, dist - salida - largoMin);
+      if (dist - salida - hueco < 12) return;
       const S = { x: L.x + ux * salida, y: L.y + uy * salida };
       const E = { x: P.x - ux * hueco, y: P.y - uy * hueco };
 
