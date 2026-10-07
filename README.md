@@ -1,23 +1,20 @@
-# Invitación de despedida ✈️ Julio, Diana, Liam y Luca
+# Travel Farewell ✈️ Julio, Diana & the Twins
 
-## Antes de publicar
-1. **Datos del evento:** edita `EVENTO` en `config.js` (fecha, hora, lugar, link de Maps, destino, WhatsApp).
-2. **Canción:** pon el MP3 en `assets/cancion.mp3`. Empieza a sonar cuando abren el sobre. Si no hay archivo, el botón de música no aparece.
-3. **Flechas:** abre `index.html?editar`, haz clic en la cara de cada niño y copia las coordenadas que salen en `config.js` (`x`, `y` = la cara; `lx`, `ly` = la etiqueta).
+Invitación de despedida: https://svarom.github.io/travel-farewell/
 
-## Verla en tu compu
+## Editar
+- **Evento:** `EVENT` en `config.js` (`date`, `dateText`, `time`, `place`, `mapUrl`, `destination`).
+  Si cambian la fecha u hora, actualiza también `farewell.ics` (`DTSTART` / `DTEND`).
+- **Canción:** `assets/song.mp3`.
+- **Fotos y flechas:** `FAMILY_PHOTO`, `TWINS_PHOTOS` y `MEMORY_PHOTOS` en `config.js`.
+  Cada flecha: `x`, `y` = la cara (% de la foto); `lx`, `ly` = la etiqueta; `r` = radio de la cara.
+  Abre la página con `?edit` y haz clic en una foto para obtener coordenadas.
+- Tras cambiar `styles.css`, `config.js` o `script.js`, sube el `?v=` en `index.html` para que los celulares no usen la versión en caché.
+
+## Verla local
 ```bash
 python3 -m http.server 8765
 ```
-Luego abre http://localhost:8765
 
-## Publicar en GitHub Pages (gratis)
-1. Crea un repo público en GitHub, por ejemplo `despedida`.
-2. Sube estos archivos:
-   ```bash
-   git init && git add . && git commit -m "Invitación" && git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/despedida.git
-   git push -u origin main
-   ```
-3. En el repo, ve a **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`** y guarda.
-4. En 1-2 minutos queda en `https://TU_USUARIO.github.io/despedida/`.
+## Deploy
+GitHub Pages publica la rama `main` automáticamente: haz commit y push, y en ~1 minuto se actualiza.
