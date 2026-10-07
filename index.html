@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="only light" />
+  <title>¡Buen viaje, Julio, Diana, Liam y Luca!</title>
+  <meta name="description" content="Estás invitado a la despedida de Julio, Diana y los Twins, Liam y Luca." />
+  <meta property="og:title" content="¡Buen viaje, familia! ✈️" />
+  <meta property="og:description" content="Estás invitado a la despedida de Julio, Diana y los Twins, Liam y Luca." />
+  <meta property="og:image" content="assets/fotos/familia.jpg" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="cerrado">
+
+  <div id="sobre" role="button" tabindex="0" aria-label="Abrir invitación">
+    <div class="estrellas" aria-hidden="true"></div>
+    <p class="sobre-pre">Tienes una invitación especial</p>
+    <div class="envelope">
+      <div class="env-back"></div>
+      <div class="env-letter">
+        <span class="letter-mini">Despedida</span>
+        <strong>Julio · Diana</strong>
+        <span class="letter-mini">&amp; los Twins</span>
+      </div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="env-seal">J&amp;D</div>
+    </div>
+    <p class="sobre-tap">Toca para abrir <span>👆</span></p>
+  </div>
+
+  <button id="btn-musica" aria-label="Pausar música" hidden>
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <audio id="musica" src="assets/cancion.mp3" loop preload="auto"></audio>
+
+  <main>
+    <header class="hero">
+      <div class="nubes" aria-hidden="true">
+        <span class="nube n1"></span><span class="nube n2"></span>
+        <span class="nube n3"></span><span class="nube n4"></span>
+      </div>
+
+      <svg class="ruta" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path id="ruta-avion" d="M-60,500 C150,540 300,440 500,470 S800,540 950,480 S1150,440 1290,460" />
+        <g class="avion">
+          <g transform="scale(2.2)">
+            <path d="M-14,-2.2 L7,-2.2 Q15,-1.6 15,0 Q15,1.6 7,2.2 L-14,2.2 Z" />
+            <path d="M-3,-2 L-9,-13 L-5,-13 L5,-2 Z" />
+            <path d="M-3,2 L-9,13 L-5,13 L5,2 Z" />
+            <path d="M-14,-2 L-18,-8 L-15,-8 L-10,-2 Z" />
+            <path d="M-14,2 L-17,5 L-15,5 L-11,2 Z" />
+          </g>
+          <animateMotion dur="11s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .55 1">
+            <mpath href="#ruta-avion" />
+          </animateMotion>
+        </g>
+      </svg>
+
+      <div class="hero-txt">
+        <p class="hero-pre anim" style="--d:.1s">¡Te invitamos a despedir a</p>
+        <h1>
+          <span class="anim" style="--d:.35s">Julio</span>
+          <span class="amp anim" style="--d:.55s">&amp;</span>
+          <span class="anim" style="--d:.75s">Diana</span>
+        </h1>
+        <p class="hero-kids anim" style="--d:1.05s">y a <em>los Twins</em>, Liam y Luca!</p>
+        <p class="hero-sub anim" style="--d:1.35s">Empiezan una nueva aventura rumbo a <strong data-evento="destino"></strong> ✈️</p>
+      </div>
+
+      <a class="scroll-hint anim" style="--d:1.8s" href="#familia" aria-label="Bajar">
+        <span></span>
+      </a>
+    </header>
+
+    <section id="familia" class="seccion">
+      <h2 class="titulo reveal">La tripulación</h2>
+      <p class="subtitulo reveal">Para los que todavía no los ubican 👇</p>
+      <div id="foto-familia" class="familia-wrap"></div>
+    </section>
+
+    <section id="gemelos" class="seccion seccion-safari">
+      <h2 class="titulo reveal">Los Twins</h2>
+      <p class="subtitulo reveal">¿Quién es quién? Sí, se parecen un montón. Aquí van las flechitas pa' que no haya excusa.</p>
+      <div id="galeria-gemelos" class="galeria"></div>
+    </section>
+
+    <section id="recuerdos" class="seccion">
+      <h2 class="titulo reveal">Momentos que nos llevamos</h2>
+      <div id="galeria-recuerdos" class="galeria galeria-3"></div>
+    </section>
+
+    <section id="evento" class="seccion seccion-evento">
+      <div class="boleto reveal">
+        <div class="boleto-main">
+          <p class="boleto-tag">Pase de abordar · Despedida</p>
+          <h2>¡Vamos a despedirlos como se merecen!</h2>
+
+          <div class="boleto-grid">
+            <div><span>Fecha</span><strong data-evento="fechaTexto"></strong></div>
+            <div><span>Hora</span><strong data-evento="hora"></strong></div>
+            <div class="full"><span>Lugar</span><strong data-evento="lugar"></strong><small data-evento="direccion"></small></div>
+          </div>
+
+          <div class="cuenta" id="cuenta" aria-live="polite">
+            <div><b data-c="d">0</b><span>días</span></div>
+            <div><b data-c="h">0</b><span>horas</span></div>
+            <div><b data-c="m">0</b><span>min</span></div>
+            <div><b data-c="s">0</b><span>seg</span></div>
+          </div>
+
+          <div class="botones">
+            <a id="btn-mapa" class="btn" target="_blank" rel="noopener">📍 Cómo llegar</a>
+            <a id="btn-calendario" class="btn btn-sec" href="despedida.ics">🗓️ Agendar en mi calendario</a>
+          </div>
+        </div>
+        <div class="boleto-talon" aria-hidden="true">
+          <span>✈️</span>
+          <b>J·D·L·L</b>
+          <span class="barcode"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="final" class="seccion seccion-final">
+      <p class="final-pre reveal">No es un adiós, es un</p>
+      <h2 class="final-big reveal">¡hasta pronto!</h2>
+      <p class="final-msg reveal">Donde sea que estén, aquí siempre van a tener casa, familia y muchos abrazos esperándolos. Los vamos a extrañar un montón. 💙</p>
+      <button id="btn-confeti" class="btn reveal">🎉 ¡Buen viaje!</button>
+    </section>
+
+    <footer>Hecho con cariño para Julio, Diana, Liam &amp; Luca</footer>
+  </main>
+
+  <canvas id="confeti" aria-hidden="true"></canvas>
+  <div id="toast" role="status"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

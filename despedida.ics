@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Despedida//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:despedida-julio-diana-2026-10-10
+DTSTAMP:20261006T000000Z
+DTSTART:20261010T170000
+DTEND:20261010T210000
+SUMMARY:Despedida de Julio\, Diana y los Twins ✈️
+LOCATION:Ferretería Armando (cochera)
+DESCRIPTION:Se van a Tuscaloosa\, Alabama. Ubicación: https://maps.app.goo.gl/EZdtNwoFZHT1ixi4A
+URL:https://maps.app.goo.gl/EZdtNwoFZHT1ixi4A
+BEGIN:VALARM
+TRIGGER:-PT3H
+ACTION:DISPLAY
+DESCRIPTION:Hoy es la despedida de Julio\, Diana y los Twins
+END:VALARM
+END:VEVENT
+END:VCALENDAR
